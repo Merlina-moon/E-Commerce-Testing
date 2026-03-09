@@ -1,24 +1,19 @@
+package src;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
-    private ArrayList<Double> items = new ArrayList<>();
+    private double total = 0.0;
 
-    // Requirement (i): Add
-    public void addItem(double price) {
-        items.add(price);
+    public void addItem(String name, double price) {
+        this.total += price;
     }
 
-    // Requirement (ii): Remove
-    public void removeItem(double price) {
-        items.remove(Double.valueOf(price));
+    public void removeItem(String name, double price) {
+        this.total -= price;
     }
 
-    // Requirement (iii): Calculate total price
     public double getTotalPrice() {
-        double total = 0;
-        for (double p : items) {
-            total += p;
-        }
         return total;
     }
 }
